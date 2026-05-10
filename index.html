@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FajralDev | Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+</head>
+<body>
+
+  <!-- BACKGROUND EFFECT -->
+  <div class="bg-grid"></div>
+  <div class="blur blur-1"></div>
+  <div class="blur blur-2"></div>
+
+  <!-- RIGHT TOP MENU -->
+  <button class="menu-btn" id="menuBtn">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="logo-circle">FH</div>
+
+      <button class="close-btn" id="closeBtn">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <nav class="sidebar-menu">
+      <a href="#start"><span>01.</span> Start</a>
+      <a href="#about"><span>02.</span> About</a>
+      <a href="#skill"><span>03.</span> Skill</a>
+      <a href="#experience"><span>04.</span> Experience</a>
+      <a href="#lab"><span>05.</span> Lab</a>
+      <a href="#contact"><span>06.</span> Contact</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <a href="#"><i class="fab fa-github"></i> GitHub</a>
+      <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+  </aside>
+
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- LEFT FIXED SOCIAL -->
+  <div class="left-social">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <div class="line"></div>
+  </div>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- START -->
+    <section id="start" class="hero">
+      <p class="intro">Hi, my name is</p>
+
+      <h1>Fajral Huda Gustaray.</h1>
+
+      <h2>
+        I build <span>Data</span>, <span>AI</span>, and <span>Digital Systems</span>.
+      </h2>
+
+      <p class="hero-desc">
+        Saya adalah mahasiswa Teknik Informatika yang fokus membangun kemampuan di
+        bidang Data Science, Artificial Intelligence, FastAPI, OCR, Web Development,
+        dan Web3 untuk menciptakan sistem nyata yang bermanfaat.
+      </p>
+
+      <a href="#lab" class="hero-btn">See My Projects</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h3 class="section-title"><span>02.</span> About Me</h3>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+          <p>
+            Saya sedang membangun perjalanan sebagai developer dengan fokus pada
+            pengembangan sistem audit otomatis, machine learning, data analysis,
+            dan teknologi blockchain.
+          </p>
+
+          <p>
+            Saat ini saya mengembangkan project seperti Sistem Audit POS berbasis
+            FastAPI + OCR serta AI Crypto Detector untuk analisis transaksi on-chain.
+          </p>
+        </div>
+
+        <div class="code-card">
+<pre>
+class FajralDev {
+  role = [
+    "Data Science Learner",
+    "AI Builder",
+    "Web Developer",
+    "FastAPI Developer"
+  ];
+
+  currentFocus() {
+    return [
+      "POS Audit System",
+      "AI Crypto Detector",
+      "Portfolio Building"
+    ];
+  }
+}
+</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILL -->
+    <section id="skill" class="section">
+      <h3 class="section-title"><span>03.</span> Skill</h3>
+
+      <div class="skills-container">
+
+        <div class="skill-box">
+          <h4>Frontend</h4>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h4>Backend</h4>
+          <ul>
+            <li>Python</li>
+            <li>FastAPI</li>
+            <li>SQLAlchemy</li>
+            <li>REST API</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h4>Data & AI</h4>
+          <ul>
+            <li>Pandas</li>
+            <li>Machine Learning</li>
+            <li>Data Cleaning</li>
+            <li>OCR</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h4>Other</h4>
+          <ul>
+            <li>GitHub</li>
+            <li>Web3</li>
+            <li>Solidity Basic</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <h3 class="section-title"><span>04.</span> Experience</h3>
+
+      <div class="experience-list">
+
+        <div class="experience-item">
+          <h4>Data Science Learning Journey</h4>
+          <span>2026 - Present</span>
+          <p>
+            Fokus pada data preprocessing, machine learning, clustering,
+            dan pembangunan AI system.
+          </p>
+        </div>
+
+        <div class="experience-item">
+          <h4>POS Audit Automation Project</h4>
+          <span>2026</span>
+          <p>
+            Mengembangkan sistem validasi laporan POS terhadap mutasi bank
+            menggunakan FastAPI dan OCR.
+          </p>
+        </div>
+
+        <div class="experience-item">
+          <h4>Web3 & Blockchain Learning</h4>
+          <span>2026</span>
+          <p>
+            Mempelajari Solidity, smart contract, dan on-chain transaction analysis.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LAB -->
+    <section id="lab" class="section">
+      <h3 class="section-title"><span>05.</span> Lab / Projects</h3>
+
+      <div class="project-grid">
+
+        <div class="project-card">
+          <p class="project-label">Featured Project</p>
+          <h4>Sistem Audit POS Otomatis</h4>
+          <p>
+            Validasi laporan penjualan POS terhadap bukti mutasi bank
+            berbasis FastAPI dan OCR.
+          </p>
+          <div class="tech">FastAPI • OCR • Python</div>
+        </div>
+
+        <div class="project-card">
+          <p class="project-label">Featured Project</p>
+          <h4>AI Crypto Detector</h4>
+          <p>
+            Model AI untuk mendeteksi transaksi crypto berbahaya
+            secara on-chain.
+          </p>
+          <div class="tech">AI • Data Science • Web3</div>
+        </div>
+
+        <div class="project-card">
+          <p class="project-label">Featured Project</p>
+          <h4>Portfolio Website</h4>
+          <p>
+            Website profile futuristik untuk personal branding
+            dan showcase project.
+          </p>
+          <div class="tech">HTML • CSS • JS</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <h3 class="section-title"><span>06.</span> Contact</h3>
+
+      <h2>Let’s Build Something Great.</h2>
+
+      <p>
+        Terbuka untuk kolaborasi, project, maupun koneksi profesional
+        di bidang Data, AI, dan Development.
+      </p>
+
+      <button class="hero-btn" id="openContactForm">
+        Say Hello
+      </button>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Designed & Built by Fajral Huda Gustaray</p>
+  </footer>
+
+  <!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- JS -->
+<script src="script.js"></script>
+
+
+<!-- CONTACT FORM MODAL -->
+<div class="contact-modal" id="contactModal">
+
+  <button class="modal-close" id="closeContactForm">×</button>
+
+  <!-- STEP 1 -->
+  <div class="form-step active" id="step1">
+    <h2>Let’s connect.</h2>
+    <p>What’s your name?</p>
+
+    <input type="text" id="from_name" placeholder="Your Name" />
+
+    <button class="next-btn" data-next="step2">Next →</button>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="form-step" id="step2">
+    <h2>Your email?</h2>
+
+    <input type="email" id="from_email" placeholder="your@email.com" />
+
+    <button class="back-btn" data-back="step1">← Back</button>
+    <button class="next-btn" data-next="step3">Next →</button>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="form-step" id="step3">
+    <h2>What are you interested in?</h2>
+
+    <select id="interest">
+      <option value="">Choose One</option>
+      <option value="Website Development">Website Development</option>
+      <option value="Data Science">Data Science</option>
+      <option value="AI Project">AI Project</option>
+      <option value="Web3">Web3</option>
+      <option value="Collaboration">Collaboration</option>
+    </select>
+
+    <button class="back-btn" data-back="step2">← Back</button>
+    <button class="next-btn" data-next="step4">Next →</button>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="form-step" id="step4">
+    <h2>Your message</h2>
+
+    <textarea id="message" placeholder="Tell me about your project..."></textarea>
+
+    <button class="back-btn" data-back="step3">← Back</button>
+    <button class="send-btn" id="sendEmailBtn">Send Message →</button>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="form-step" id="successStep">
+    <h2>Message Sent 🚀</h2>
+    <p>Thank you! I’ll get back to you soon.</p>
+  </div>
+
+</div>
+</body>
+</html>

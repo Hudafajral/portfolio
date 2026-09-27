@@ -16,11 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const openContactForm = document.getElementById("openContactForm");
   const closeContactForm = document.getElementById("closeContactForm");
   const contactModal = document.getElementById("contactModal");
+  const topContactTrigger = document.getElementById("topContactTrigger");
 
-  const nextButtons = document.querySelectorAll(".next-btn");
-  const backButtons = document.querySelectorAll(".back-btn");
-  const sendEmailBtn = document.getElementById("sendEmailBtn");
-  const formSteps = document.querySelectorAll(".form-step");
+  const contactForm = document.getElementById("contactForm");
+  const formSuccessState = document.getElementById("formSuccessState");
 
   // Inisialisasi EmailJS
   if (typeof emailjs !== "undefined") {
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     currentIndex = index;
     const targetId = sectionIds[currentIndex];
 
-    // Update Nav Node Kiri
     spaceNodes.forEach(node => {
       node.classList.remove("active");
       if (node.getAttribute("data-target") === targetId) {
@@ -41,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Update Tampilan Panel
     sectionPanels.forEach(panel => {
       panel.classList.remove("active");
       if (panel.getAttribute("id") === targetId) {
@@ -49,24 +46,21 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Beri jeda debounce 700ms agar putaran wheel tidak membuat halaman loncat-loncat
     setTimeout(() => {
       isScrolling = false;
     }, 700);
   }
 
-  // EVENT MOUSE WHEEL KONTROL SCROLL BEBAS MENTAL
+  // EVENT MOUSE WHEEL
   window.addEventListener("wheel", (e) => {
-    if (window.innerWidth <= 1100) return; // Mode normal di layar HP
+    if (window.innerWidth <= 1100) return;
 
-    // Cek apakah kursor berada di dalam kotak Timeline Experience
     if (sectionIds[currentIndex] === "experience" && timelineScroll) {
       const isOverTimeline = timelineScroll.contains(e.target);
       if (isOverTimeline) {
         const atTop = timelineScroll.scrollTop <= 0;
         const atBottom = timelineScroll.scrollTop + timelineScroll.clientHeight >= timelineScroll.scrollHeight - 2;
 
-        // Jika belum mentok di dalam timeline, biarkan scroll kotaknya saja
         if ((e.deltaY > 0 && !atBottom) || (e.deltaY < 0 && !atTop)) {
           return;
         }
@@ -76,13 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isScrolling) return;
 
     if (e.deltaY > 30) {
-      // Putar mouse wheel ke bawah -> pindah ke section berikutnya
       if (currentIndex < sectionIds.length - 1) {
         isScrolling = true;
         goToSection(currentIndex + 1);
       }
     } else if (e.deltaY < -30) {
-      // Putar mouse wheel ke atas -> pindah ke section sebelumnya
       if (currentIndex > 0) {
         isScrolling = true;
         goToSection(currentIndex - 1);
@@ -90,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, { passive: true });
 
-  // NAVIGASI TOMBOL KEYBOARD (Arrow Down / Up)
+  // NAVIGASI KEYBOARD
   window.addEventListener("keydown", (e) => {
     if (window.innerWidth <= 1100 || isScrolling) return;
 
@@ -120,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // LINK INTERNAL (Tombol "See My Projects")
+  // TOMBOL HERO "See My Projects"
   const heroBtn = document.querySelector(".hero-btn-pill");
   if (heroBtn) {
     heroBtn.addEventListener("click", (e) => {
@@ -131,6 +123,89 @@ document.addEventListener("DOMContentLoaded", () => {
         goToSection(labIndex);
       }
     });
+  }
+
+  // TRIGGER TOMBOL "Contact Me" KANAN ATAS
+  if (topContactTrigger) {
+    topContactTrigger.addEventListener("click", (e) => {
+      if (window.innerWidth > 1100) {
+        e.preventDefault();
+        const contactIndex = sectionIds.indexOf("contact");
+        if (contactIndex !== -1) {
+          isScrolling = true;
+          goToSection(contactIndex);
+        }
+      }
+    });
+  }
+
+  // ========================================================
+  // LAB 3D CYLINDRICAL CAROUSEL LOGIC
+  // ========================================================
+  const labCards = document.querySelectorAll(".lab-card");
+  const labPrevBtn = document.getElementById("labPrevBtn");
+  const labNextBtn = document.getElementById("labNextBtn");
+  const carouselDotsContainer = document.getElementById("carouselDots");
+  let activeCardIndex = 0;
+
+  if (carouselDotsContainer && labCards.length > 0) {
+    carouselDotsContainer.innerHTML = "";
+    labCards.forEach((_, idx) => {
+      const dot = document.createElement("span");
+      dot.classList.add("c-dot");
+      if (idx === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        activeCardIndex = idx;
+        updateLabCarousel();
+      });
+      carouselDotsContainer.appendChild(dot);
+    });
+  }
+
+  function updateLabCarousel() {
+    const total = labCards.length;
+    const dots = document.querySelectorAll(".c-dot");
+
+    labCards.forEach((card, i) => {
+      card.classList.remove("prev", "active", "next", "hidden");
+
+      if (i === activeCardIndex) {
+        card.classList.add("active");
+      } else if (i === (activeCardIndex - 1 + total) % total) {
+        card.classList.add("prev");
+      } else if (i === (activeCardIndex + 1) % total) {
+        card.classList.add("next");
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === activeCardIndex);
+    });
+  }
+
+  if (labNextBtn && labPrevBtn) {
+    labNextBtn.addEventListener("click", () => {
+      activeCardIndex = (activeCardIndex + 1) % labCards.length;
+      updateLabCarousel();
+    });
+
+    labPrevBtn.addEventListener("click", () => {
+      activeCardIndex = (activeCardIndex - 1 + labCards.length) % labCards.length;
+      updateLabCarousel();
+    });
+
+    labCards.forEach((card, idx) => {
+      card.addEventListener("click", () => {
+        if (activeCardIndex !== idx) {
+          activeCardIndex = idx;
+          updateLabCarousel();
+        }
+      });
+    });
+
+    updateLabCarousel();
   }
 
   // DRAWER MOBILE
@@ -163,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ANIMASI MENGETIK (Typing Effect)
-  const words = ["Data Systems.", "AI Solutions.", "Web Applications.", "FastAPI Backends."];
+  const words = ["Intelligent Systems.", "AI-Powered Solutions.", "data into decisions."];
   let wordIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
@@ -198,68 +273,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   typeEffect();
 
-  // MODAL CONTACT FORM WIZARD
-  function showStep(stepId) {
-    formSteps.forEach(step => step.classList.remove("active"));
-    const targetStep = document.getElementById(stepId);
-    if (targetStep) targetStep.classList.add("active");
-  }
-
+  // ========================================================
+  // SINGLE-CARD CONTACT FORM MODAL
+  // ========================================================
   function openModal() {
     contactModal.classList.add("active");
-    showStep("step1");
+    if (contactForm) contactForm.style.display = "flex";
+    if (formSuccessState) formSuccessState.style.display = "none";
   }
 
   function closeModal() {
     contactModal.classList.remove("active");
-    showStep("step1");
   }
 
   if (openContactForm) openContactForm.addEventListener("click", openModal);
   if (closeContactForm) closeContactForm.addEventListener("click", closeModal);
 
   if (contactModal) {
-    contactModal.addEventListener("click", e => {
+    contactModal.addEventListener("click", (e) => {
       if (e.target === contactModal) closeModal();
     });
   }
 
-  nextButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const nextStep = button.dataset.next;
-      if (nextStep === "step2") {
-        const name = document.getElementById("from_name").value.trim();
-        if (!name) return alert("Please enter your name.");
-      }
-      if (nextStep === "step3") {
-        const email = document.getElementById("from_email").value.trim();
-        if (!email) return alert("Please enter your email.");
-      }
-      if (nextStep === "step4") {
-        const interest = document.getElementById("interest").value;
-        if (!interest) return alert("Please select your interest.");
-      }
-      showStep(nextStep);
-    });
-  });
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-  backButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      showStep(button.dataset.back);
-    });
-  });
-
-  if (sendEmailBtn) {
-    sendEmailBtn.addEventListener("click", () => {
       const from_name = document.getElementById("from_name").value.trim();
       const from_email = document.getElementById("from_email").value.trim();
       const interest = document.getElementById("interest").value;
       const message = document.getElementById("message").value.trim();
+      const submitBtn = document.getElementById("sendEmailBtn");
 
-      if (!message) return alert("Please enter your message.");
-
-      sendEmailBtn.innerText = "Sending...";
-      sendEmailBtn.disabled = true;
+      submitBtn.innerHTML = `<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>`;
+      submitBtn.disabled = true;
 
       emailjs.send("service_ioi3srj", "template_k42fvjq", {
         from_name,
@@ -268,19 +315,17 @@ document.addEventListener("DOMContentLoaded", () => {
         message
       })
       .then(() => {
-        sendEmailBtn.innerText = "Send Message →";
-        sendEmailBtn.disabled = false;
-        document.getElementById("from_name").value = "";
-        document.getElementById("from_email").value = "";
-        document.getElementById("interest").value = "";
-        document.getElementById("message").value = "";
-        showStep("successStep");
+        contactForm.reset();
+        contactForm.style.display = "none";
+        formSuccessState.style.display = "block";
+        submitBtn.innerHTML = `<span>Kirim Pesan</span> <i class="fas fa-paper-plane"></i>`;
+        submitBtn.disabled = false;
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("FAILED...", error);
-        alert("Failed to send message: " + error.text);
-        sendEmailBtn.innerText = "Send Message →";
-        sendEmailBtn.disabled = false;
+        alert("Gagal mengirim pesan: " + JSON.stringify(error));
+        submitBtn.innerHTML = `<span>Kirim Pesan</span> <i class="fas fa-paper-plane"></i>`;
+        submitBtn.disabled = false;
       });
     });
   }

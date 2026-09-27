@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FajralDev | Portfolio</title>
 
-  <!-- CSS -->
+  <!-- CSS Utama -->
   <link rel="stylesheet" href="style.css" />
 
   <!-- Font Google -->
@@ -18,6 +18,12 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   />
+
+  <!-- Devicon Icons (Logo Resmi Bahasa, Framework & Tools) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+  />
 </head>
 <body>
 
@@ -25,6 +31,14 @@
   <div class="bg-grid"></div>
   <div class="blur blur-1"></div>
   <div class="blur blur-2"></div>
+
+  <!-- TOMBOL CONTACT ME (POJOK KANAN ATAS) -->
+  <div class="top-contact-wrapper">
+    <a href="#contact" class="top-contact-btn" id="topContactTrigger">
+      <span>Contact Me</span>
+      <i class="fas fa-paper-plane"></i>
+    </a>
+  </div>
 
   <!-- FLOATING SPACE VERTICAL NAVBAR (SISI KIRI) -->
   <nav class="space-nav" id="spaceNav">
@@ -101,9 +115,9 @@
 
   <!-- FIXED SOCIAL (SISI KANAN) -->
   <div class="right-social">
-    <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://github.com/Hudafajral" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/hudafajral/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/_hudafajral/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
     <div class="line"></div>
   </div>
 
@@ -134,11 +148,11 @@
   <!-- OVERLAY BACKGROUND -->
   <div class="overlay" id="overlay"></div>
 
-  <!-- WADAH HALAMAN (BEBAS DARI SCROLL SNAP NGEBUG) -->
+  <!-- WADAH HALAMAN UTAMA -->
   <main class="main-wrapper">
 
     <!-- 01. START / HERO -->
-    <section id="start" class="section-panel hero">
+    <section id="start" class="section-panel hero active">
       <div class="section-inner hero-container">
         
         <div class="hero-content">
@@ -150,27 +164,36 @@
           </h2>
 
           <p class="hero-desc">
-            Saya adalah mahasiswa Teknik Informatika yang fokus membangun kemampuan di
-            bidang Data Science, Artificial Intelligence, FastAPI, OCR, Web Development,
-            dan Web3 untuk menciptakan sistem nyata yang bermanfaat.
+            Saya adalah Mahasiswa Informatika yang fokus membangun sistem cerdas di persimpangan Data Science, AI, dan Web Development — dari model prediktif hingga aplikasi siap pakai.
           </p>
 
           <div class="hero-socials">
-            <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/Hudafajral" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/hudafajral/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/_hudafajral/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
           </div>
 
+          <!-- HERO ACTIONS -->
           <div class="hero-actions">
             <a href="#lab" class="hero-btn-pill">See My Projects</a>
+            <a href="assets/cv.pdf" download="CV_Fajral_Huda_Gustaray.pdf" target="_blank" class="hero-btn-outline" title="Download Curriculum Vitae">
+              <i class="fas fa-download"></i>
+              <span>Download CV</span>
+            </a>
           </div>
         </div>
 
+        <!-- 3D POP-OUT FOTO PROFIL -->
         <div class="hero-image-wrapper">
           <div class="hexagon-glow"></div>
-          <div class="hexagon-box">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="Fajral Huda Gustaray" class="profile-img" />
+          
+          <!-- Bingkai Hexagon -->
+          <div class="hexagon-frame">
+            <div class="hexagon-bg"></div>
           </div>
+
+          <!-- Foto Pop-Out Utuh (Badan pas di garis bingkai, kepala menyembul keluar) -->
+          <img src="assets/profile.png" alt="Fajral Huda Gustaray" class="popout-single-img" />
         </div>
 
       </div>
@@ -183,13 +206,14 @@
         <div class="about-grid">
           <div class="about-text">
             <p>
-              Saya sedang membangun perjalanan sebagai developer dengan fokus pada
-              pengembangan sistem audit otomatis, machine learning, data analysis,
-              dan teknologi blockchain.
+              Saya sedang mendalami peran sebagai AI & Data Engineer, 
+              dengan minat khusus di audit otomatis, machine learning, 
+              dan analitik data untuk sektor finansial.
             </p>
             <p>
-              Saat ini saya mengembangkan project seperti Sistem Audit POS berbasis
-              FastAPI + OCR serta AI Crypto Detector untuk analisis transaksi on-chain.
+              Salah satu project andalan saya: Sistem Audit POS berbasis FastAPI 
+              + OCR yang mengotomatisasi rekonsiliasi transaksi, 
+              serta AI Crypto Detector untuk mendeteksi pola mencurigakan pada transaksi on-chain.
             </p>
           </div>
 
@@ -208,17 +232,18 @@
 
             <pre class="code-body"><code><span class="kwd">class</span> <span class="cls">FajralDev</span> {
   <span class="prop">role</span> = [
-    <span class="str">"Data Science Learner"</span>,
-    <span class="str">"AI Builder"</span>,
-    <span class="str">"Web Developer"</span>,
-    <span class="str">"FastAPI Developer"</span>
+    <span class="str">"AI/ML Engineer"</span>,
+    <span class="str">"Data Scientist"</span>,
+    <span class="str">"FastAPI Developer"</span>,
+    <span class="str">"Web Developer"</span>
   ];
 
   <span class="fn">currentFocus</span>() {
     <span class="kwd">return</span> [
-      <span class="str">"POS Audit System"</span>,
-      <span class="str">"AI Crypto Detector"</span>,
-      <span class="str">"Portfolio Building"</span>
+      <span class="str">"AI for Finance"</span>,
+      <span class="str">"RAG & LLM Systems"</span>,
+      <span class="str">"Automated Audit & Reconciliation"</span>,
+      <span class="str">"On-chain Data Analysis"</span>
     ];
   }
 }<span class="cursor-blink">|</span></code></pre>
@@ -228,53 +253,179 @@
       </div>
     </section>
 
-    <!-- 03. SKILL -->
+    <!-- 03. SKILL & TECHNOLOGIES -->
     <section id="skill" class="section-panel">
       <div class="section-inner">
-        <h3 class="section-title"><span>03.</span> Skill</h3>
+        <h3 class="section-title"><span>03.</span> Skill & Technologies</h3>
+        
         <div class="skills-container">
-          <div class="skill-box">
-            <h4>Frontend</h4>
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-            </ul>
+
+          <!-- 1. DATA & AI (PRIMARY FOCUS - HIGHLIGHTED, DITARUH PALING DEPAN) -->
+          <div class="skill-box featured-skill">
+            <div class="featured-glow-bar"></div>
+            <div class="skill-box-header">
+              <span class="box-badge primary-badge"><i class="fas fa-star"></i> PRIMARY FOCUS</span>
+              <h4>Data & AI</h4>
+            </div>
+
+            <div class="skill-body-scroll">
+              <div class="skill-group">
+                <span class="group-label">Domain Knowledge</span>
+                <div class="tech-chip-list">
+                  <div class="tech-chip highlight-chip"><i class="fas fa-brain"></i> <span>Machine Learning</span></div>
+                  <div class="tech-chip highlight-chip"><i class="fas fa-broom"></i> <span>Data Cleaning</span></div>
+                  <div class="tech-chip highlight-chip"><i class="fas fa-eye"></i> <span>OCR Vision</span></div>
+                  <div class="tech-chip highlight-chip"><i class="fas fa-project-diagram"></i> <span>Clustering</span></div>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <span class="group-label">Libraries & Frameworks</span>
+                <div class="tech-chip-list">
+                  <div class="tech-chip"><i class="devicon-pandas-plain colored"></i> <span>Pandas</span></div>
+                  <div class="tech-chip"><i class="devicon-numpy-plain colored"></i> <span>NumPy</span></div>
+                  <div class="tech-chip"><i class="devicon-scikitlearn-plain colored"></i> <span>Scikit-Learn</span></div>
+                  <div class="tech-chip"><i class="devicon-opencv-plain colored"></i> <span>OpenCV</span></div>
+                  <div class="tech-chip"><i class="devicon-pytorch-original colored"></i> <span>PyTorch</span></div>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <span class="group-label">Analytics & Engine</span>
+                <div class="tech-chip-list">
+                  <div class="tech-chip"><i class="devicon-jupyter-plain colored"></i> <span>Jupyter</span></div>
+                  <div class="tech-chip"><i class="fas fa-file-invoice"></i> <span>Tesseract</span></div>
+                  <div class="tech-chip"><i class="fas fa-chart-line"></i> <span>Matplotlib</span></div>
+                </div>
+              </div>
+            </div>
           </div>
 
+          <!-- 2. BACKEND -->
           <div class="skill-box">
-            <h4>Backend</h4>
-            <ul>
-              <li>Python</li>
-              <li>FastAPI</li>
-              <li>SQLAlchemy</li>
-              <li>REST API</li>
-            </ul>
+            <div class="skill-box-header">
+              <span class="box-badge">SYSTEMS & ARCHITECTURE</span>
+              <h4>Backend</h4>
+            </div>
+
+            <div class="skill-body-scroll">
+              <div class="skill-group">
+                <span class="group-label">Language</span>
+                <div class="tech-chip-list">
+                  <div class="tech-chip"><i class="devicon-python-plain colored"></i> <span>Python</span></div>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <span class="group-label">Frameworks & API</span>
+                <div class="tech-chip-list">
+                  <div class="tech-chip"><i class="devicon-fastapi-plain colored"></i> <span>FastAPI</span></div>
+                  <div class="tech-chip"><i class="devicon-flask-original"></i> <span>Flask</span></div>
+                  <div class="tech-chip"><i class="fas fa-network-wired"></i> <span>RESTful API</span></div>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <span class="group-label">Databases & ORM</span>
+                <div class="tech-chip-list">
+                  <div class="tech-chip"><i class="devicon-postgresql-plain colored"></i> <span>PostgreSQL</span></div>
+                  <div class="tech-chip"><i class="devicon-mysql-plain colored"></i> <span>MySQL</span></div>
+                  <div class="tech-chip"><i class="devicon-sqlite-plain colored"></i> <span>SQLite</span></div>
+                  <div class="tech-chip"><i class="devicon-sqlalchemy-plain colored"></i> <span>SQLAlchemy</span></div>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <span class="group-label">Server & Security</span>
+                <div class="tech-chip-list">
+                  <div class="tech-chip"><i class="fas fa-server"></i> <span>Uvicorn</span></div>
+                  <div class="tech-chip"><i class="fas fa-shield-alt"></i> <span>JWT Auth</span></div>
+                  <div class="tech-chip"><i class="devicon-redis-plain colored"></i> <span>Redis (Caching)</span></div>
+                </div>
+              </div>
+            </div>
           </div>
 
+          <!-- 3. FRONTEND -->
           <div class="skill-box">
-            <h4>Data & AI</h4>
-            <ul>
-              <li>Pandas</li>
-              <li>Machine Learning</li>
-              <li>Data Cleaning</li>
-              <li>OCR</li>
-            </ul>
+            <div class="skill-box-header">
+              <span class="box-badge">INTERFACE & WEB</span>
+              <h4>Frontend</h4>
+            </div>
+
+            <div class="skill-body-scroll">
+              <div class="skill-group">
+                <span class="group-label">Languages</span>
+                <div class="tech-chip-list">
+                  <div class="tech-chip"><i class="devicon-html5-plain colored"></i> <span>HTML5</span></div>
+                  <div class="tech-chip"><i class="devicon-css3-plain colored"></i> <span>CSS3</span></div>
+                  <div class="tech-chip"><i class="devicon-javascript-plain colored"></i> <span>JavaScript</span></div>
+                  <div class="tech-chip"><i class="devicon-typescript-plain colored"></i> <span>TypeScript</span></div>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <span class="group-label">Frameworks & UI</span>
+                <div class="tech-chip-list">
+                  <div class="tech-chip"><i class="devicon-react-original colored"></i> <span>React.js</span></div>
+                  <div class="tech-chip"><i class="devicon-tailwindcss-plain colored"></i> <span>Tailwind</span></div>
+                  <div class="tech-chip"><i class="devicon-bootstrap-plain colored"></i> <span>Bootstrap</span></div>
+                  <div class="tech-chip"><i class="fas fa-mobile-alt"></i> <span>Responsive</span></div>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <span class="group-label">Build Tools</span>
+                <div class="tech-chip-list">
+                  <div class="tech-chip"><i class="devicon-vite-original colored"></i> <span>Vite</span></div>
+                  <div class="tech-chip"><i class="devicon-npm-original-wordmark colored"></i> <span>NPM</span></div>
+                </div>
+              </div>
+            </div>
           </div>
 
+          <!-- 4. DEVOPS & WEB3 (nama kolom disamakan sama badge & isi mayoritas) -->
           <div class="skill-box">
-            <h4>Other</h4>
-            <ul>
-              <li>GitHub</li>
-              <li>Web3</li>
-              <li>Solidity Basic</li>
-            </ul>
+            <div class="skill-box-header">
+              <span class="box-badge">DEVOPS & WEB3</span>
+              <h4>DevOps & Web3</h4>
+            </div>
+
+            <div class="skill-body-scroll">
+              <div class="skill-group">
+                <span class="group-label">DevOps & Environment</span>
+                <div class="tech-chip-list">
+                  <div class="tech-chip"><i class="devicon-docker-plain colored"></i> <span>Docker</span></div>
+                  <div class="tech-chip"><i class="devicon-git-plain colored"></i> <span>Git</span></div>
+                  <div class="tech-chip"><i class="devicon-github-original"></i> <span>GitHub</span></div>
+                  <div class="tech-chip"><i class="devicon-linux-plain"></i> <span>Linux</span></div>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <span class="group-label">API Testing & Workspace</span>
+                <div class="tech-chip-list">
+                  <div class="tech-chip"><i class="devicon-postman-plain colored"></i> <span>Postman</span></div>
+                  <div class="tech-chip"><i class="devicon-vscode-plain colored"></i> <span>VS Code</span></div>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <span class="group-label">Blockchain Ecosystem</span>
+                <div class="tech-chip-list">
+                  <div class="tech-chip"><i class="fas fa-file-contract"></i> <span>Solidity</span></div>
+                  <div class="tech-chip"><i class="fas fa-cubes"></i> <span>Web3.js</span></div>
+                  <div class="tech-chip"><i class="fas fa-coins"></i> <span>Smart Contract</span></div>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- 04. EXPERIENCE (TIMELINE) -->
+    <!-- 04. EXPERIENCE -->
     <section id="experience" class="section-panel">
       <div class="section-inner">
         <h3 class="section-title"><span>04.</span> Experience</h3>
@@ -396,40 +547,219 @@
       </div>
     </section>
 
-    <!-- 05. LAB -->
+    <!-- 05. LAB / PROJECTS (8 ITEMS 3D CAROUSEL) -->
     <section id="lab" class="section-panel">
       <div class="section-inner">
         <h3 class="section-title"><span>05.</span> Lab / Projects</h3>
-        <div class="project-grid">
-          <div class="project-card">
-            <p class="project-label">Featured Project</p>
-            <h4>Sistem Audit POS Otomatis</h4>
-            <p>
-              Validasi laporan penjualan POS terhadap bukti mutasi bank
-              berbasis FastAPI dan OCR.
-            </p>
-            <div class="tech">FastAPI • OCR • Python</div>
+        
+        <div class="lab-carousel-container">
+          <div class="lab-3d-stage">
+            
+            <!-- PROYEK 1 -->
+            <div class="lab-card active" data-index="0">
+              <div class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80" alt="Sistem Audit POS" />
+                <div class="thumb-overlay"></div>
+              </div>
+              <div class="card-content">
+                <span class="card-tag">Featured Project</span>
+                <h4 class="card-title">Sistem Audit POS Otomatis</h4>
+                <p class="card-desc">
+                  Validasi laporan penjualan POS terhadap bukti mutasi bank berbasis FastAPI dan OCR untuk verifikasi transaksi secara instan.
+                </p>
+                <div class="card-tech-stack">
+                  <span class="tech-pill">FastAPI</span>
+                  <span class="tech-pill">OCR</span>
+                  <span class="tech-pill">Python</span>
+                </div>
+                <div class="card-footer">
+                  <a href="https://github.com/" target="_blank" class="deploy-btn" title="View Source Code"><span>Code</span> <i class="fab fa-github"></i></a>
+                  <a href="https://your-demo-url.vercel.app" target="_blank" class="deploy-btn highlight" title="Live Deployment"><span>Deploy</span> <i class="fas fa-external-link-alt"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROYEK 2 -->
+            <div class="lab-card next" data-index="1">
+              <div class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=700&q=80" alt="AI Crypto Detector" />
+                <div class="thumb-overlay"></div>
+              </div>
+              <div class="card-content">
+                <span class="card-tag">Featured Project</span>
+                <h4 class="card-title">AI Crypto Detector</h4>
+                <p class="card-desc">
+                  Model AI untuk mendeteksi transaksi crypto berbahaya secara on-chain dan meminimalisir risiko eksploitasi smart contract.
+                </p>
+                <div class="card-tech-stack">
+                  <span class="tech-pill">AI / ML</span>
+                  <span class="tech-pill">Data Science</span>
+                  <span class="tech-pill">Web3</span>
+                </div>
+                <div class="card-footer">
+                  <a href="https://github.com/" target="_blank" class="deploy-btn" title="View Source Code"><span>Code</span> <i class="fab fa-github"></i></a>
+                  <a href="https://your-demo-url.vercel.app" target="_blank" class="deploy-btn highlight" title="Live Deployment"><span>Deploy</span> <i class="fas fa-external-link-alt"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROYEK 3 -->
+            <div class="lab-card hidden" data-index="2">
+              <div class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=700&q=80" alt="Portfolio Website" />
+                <div class="thumb-overlay"></div>
+              </div>
+              <div class="card-content">
+                <span class="card-tag">Featured Project</span>
+                <h4 class="card-title">Portfolio Website</h4>
+                <p class="card-desc">
+                  Website profile futuristik dengan tema antariksa sci-fi dan interaktif untuk personal branding serta showcase karya teknis.
+                </p>
+                <div class="card-tech-stack">
+                  <span class="tech-pill">HTML5</span>
+                  <span class="tech-pill">CSS3</span>
+                  <span class="tech-pill">JavaScript</span>
+                </div>
+                <div class="card-footer">
+                  <a href="https://github.com/" target="_blank" class="deploy-btn" title="View Source Code"><span>Code</span> <i class="fab fa-github"></i></a>
+                  <a href="https://your-demo-url.vercel.app" target="_blank" class="deploy-btn highlight" title="Live Deployment"><span>Deploy</span> <i class="fas fa-external-link-alt"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROYEK 4 -->
+            <div class="lab-card hidden" data-index="3">
+              <div class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=80" alt="Customer Segmentation AI" />
+                <div class="thumb-overlay"></div>
+              </div>
+              <div class="card-content">
+                <span class="card-tag">Machine Learning</span>
+                <h4 class="card-title">AI Customer Segmentation</h4>
+                <p class="card-desc">
+                  Analisis klasterisasi pola transaksi pelanggan retail menggunakan algoritma K-Means dan PCA untuk mengoptimalkan strategi marketing.
+                </p>
+                <div class="card-tech-stack">
+                  <span class="tech-pill">Scikit-Learn</span>
+                  <span class="tech-pill">Pandas</span>
+                  <span class="tech-pill">Seaborn</span>
+                </div>
+                <div class="card-footer">
+                  <a href="https://github.com/" target="_blank" class="deploy-btn" title="View Source Code"><span>Code</span> <i class="fab fa-github"></i></a>
+                  <a href="https://your-demo-url.vercel.app" target="_blank" class="deploy-btn highlight" title="Live Deployment"><span>Deploy</span> <i class="fas fa-external-link-alt"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROYEK 5 -->
+            <div class="lab-card hidden" data-index="4">
+              <div class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" alt="Realtime Analytics API" />
+                <div class="thumb-overlay"></div>
+              </div>
+              <div class="card-content">
+                <span class="card-tag">Backend Architecture</span>
+                <h4 class="card-title">High-Throughput Analytics API</h4>
+                <p class="card-desc">
+                  Microservice backend asinkron performa tinggi yang menangani ribuan data stream analitik per detik dengan caching Redis.
+                </p>
+                <div class="card-tech-stack">
+                  <span class="tech-pill">FastAPI</span>
+                  <span class="tech-pill">Redis</span>
+                  <span class="tech-pill">PostgreSQL</span>
+                </div>
+                <div class="card-footer">
+                  <a href="https://github.com/" target="_blank" class="deploy-btn" title="View Source Code"><span>Code</span> <i class="fab fa-github"></i></a>
+                  <a href="https://your-demo-url.vercel.app" target="_blank" class="deploy-btn highlight" title="Live Deployment"><span>Deploy</span> <i class="fas fa-external-link-alt"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROYEK 6 -->
+            <div class="lab-card hidden" data-index="5">
+              <div class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1622979135225-d2ba269bc1df?auto=format&fit=crop&w=700&q=80" alt="Web3 Escrow dApp" />
+                <div class="thumb-overlay"></div>
+              </div>
+              <div class="card-content">
+                <span class="card-tag">Web3 & Blockchain</span>
+                <h4 class="card-title">Decentralized Escrow Protocol</h4>
+                <p class="card-desc">
+                  Aplikasi dApp escrow terdesentralisasi dengan multi-signature untuk mengamankan pembayaran antar developer freelance dan klien.
+                </p>
+                <div class="card-tech-stack">
+                  <span class="tech-pill">Solidity</span>
+                  <span class="tech-pill">Ethers.js</span>
+                  <span class="tech-pill">Hardhat</span>
+                </div>
+                <div class="card-footer">
+                  <a href="https://github.com/" target="_blank" class="deploy-btn" title="View Source Code"><span>Code</span> <i class="fab fa-github"></i></a>
+                  <a href="https://your-demo-url.vercel.app" target="_blank" class="deploy-btn highlight" title="Live Deployment"><span>Deploy</span> <i class="fas fa-external-link-alt"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROYEK 7 -->
+            <div class="lab-card hidden" data-index="6">
+              <div class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=700&q=80" alt="DocuScan OCR Engine" />
+                <div class="thumb-overlay"></div>
+              </div>
+              <div class="card-content">
+                <span class="card-tag">Computer Vision</span>
+                <h4 class="card-title">Smart Invoice Scanner</h4>
+                <p class="card-desc">
+                  Pipeline ekstraksi otomatis nota fisik dan invoice digital menjadi data JSON terstruktur menggunakan Tesseract OCR dan OpenCV.
+                </p>
+                <div class="card-tech-stack">
+                  <span class="tech-pill">OpenCV</span>
+                  <span class="tech-pill">Tesseract</span>
+                  <span class="tech-pill">Python</span>
+                </div>
+                <div class="card-footer">
+                  <a href="https://github.com/" target="_blank" class="deploy-btn" title="View Source Code"><span>Code</span> <i class="fab fa-github"></i></a>
+                  <a href="https://your-demo-url.vercel.app" target="_blank" class="deploy-btn highlight" title="Live Deployment"><span>Deploy</span> <i class="fas fa-external-link-alt"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROYEK 8 -->
+            <div class="lab-card prev" data-index="7">
+              <div class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=700&q=80" alt="DevPulse Dashboard" />
+                <div class="thumb-overlay"></div>
+              </div>
+              <div class="card-content">
+                <span class="card-tag">Web Development</span>
+                <h4 class="card-title">DevPulse Task Matrix</h4>
+                <p class="card-desc">
+                  Platform manajemen proyek sprint kanban yang terintegrasi langsung dengan webhook GitHub repository untuk tracking tim engineering.
+                </p>
+                <div class="card-tech-stack">
+                  <span class="tech-pill">JavaScript</span>
+                  <span class="tech-pill">REST API</span>
+                  <span class="tech-pill">Tailwind</span>
+                </div>
+                <div class="card-footer">
+                  <a href="https://github.com/" target="_blank" class="deploy-btn" title="View Source Code"><span>Code</span> <i class="fab fa-github"></i></a>
+                  <a href="https://your-demo-url.vercel.app" target="_blank" class="deploy-btn highlight" title="Live Deployment"><span>Deploy</span> <i class="fas fa-external-link-alt"></i></a>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-          <div class="project-card">
-            <p class="project-label">Featured Project</p>
-            <h4>AI Crypto Detector</h4>
-            <p>
-              Model AI untuk mendeteksi transaksi crypto berbahaya
-              secara on-chain.
-            </p>
-            <div class="tech">AI • Data Science • Web3</div>
+          <!-- KONTROL NAVIGASI KANAN DAN KIRI -->
+          <div class="carousel-nav-controls">
+            <button type="button" class="carousel-arrow prev" id="labPrevBtn" title="Previous Project">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel-dots" id="carouselDots"></div>
+            <button type="button" class="carousel-arrow next" id="labNextBtn" title="Next Project">
+              <i class="fas fa-chevron-right"></i>
+            </button>
           </div>
 
-          <div class="project-card">
-            <p class="project-label">Featured Project</p>
-            <h4>Portfolio Website</h4>
-            <p>
-              Website profile futuristik untuk personal branding
-              dan showcase project.
-            </p>
-            <div class="tech">HTML • CSS • JS</div>
-          </div>
         </div>
       </div>
     </section>
@@ -456,48 +786,58 @@
   <!-- JAVASCRIPT -->
   <script src="script.js"></script>
 
-  <!-- CONTACT FORM MODAL -->
+  <!-- CONTACT FORM MODAL (SINGLE CARD FORM) -->
   <div class="contact-modal" id="contactModal">
     <button class="modal-close" id="closeContactForm">×</button>
 
-    <div class="form-step active" id="step1">
-      <h2>Let’s connect.</h2>
-      <p>What’s your name?</p>
-      <input type="text" id="from_name" placeholder="Your Name" />
-      <button class="next-btn" data-next="step2">Next →</button>
-    </div>
+    <div class="single-contact-card">
+      <div class="modal-header">
+        <span class="modal-badge">GET IN TOUCH</span>
+        <h2>Let’s Build Something Together.</h2>
+        <p>Silakan isi detail di bawah ini, saya akan merespons melalui email Anda.</p>
+      </div>
 
-    <div class="form-step" id="step2">
-      <h2>Your email?</h2>
-      <input type="email" id="from_email" placeholder="your@email.com" />
-      <button class="back-btn" data-back="step1">← Back</button>
-      <button class="next-btn" data-next="step3">Next →</button>
-    </div>
+      <form id="contactForm" class="contact-form-body">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="from_name">Nama Lengkap</label>
+            <input type="text" id="from_name" placeholder="John Doe" required />
+          </div>
+          <div class="form-field">
+            <label for="from_email">Alamat Email</label>
+            <input type="email" id="from_email" placeholder="john@example.com" required />
+          </div>
+        </div>
 
-    <div class="form-step" id="step3">
-      <h2>What are you interested in?</h2>
-      <select id="interest">
-        <option value="">Choose One</option>
-        <option value="Website Development">Website Development</option>
-        <option value="Data Science">Data Science</option>
-        <option value="AI Project">AI Project</option>
-        <option value="Web3">Web3</option>
-        <option value="Collaboration">Collaboration</option>
-      </select>
-      <button class="back-btn" data-back="step2">← Back</button>
-      <button class="next-btn" data-next="step4">Next →</button>
-    </div>
+        <div class="form-field">
+          <label for="interest">Kebutuhan / Layanan</label>
+          <select id="interest" required>
+            <option value="">Pilih Fokus Proyek</option>
+            <option value="Website Development">Website Development</option>
+            <option value="Data Science & ML">Data Science & ML</option>
+            <option value="AI Project & OCR">AI Project & OCR</option>
+            <option value="Web3 & Blockchain">Web3 & Blockchain</option>
+            <option value="Collaboration / Freelance">Kolaborasi / Freelance</option>
+          </select>
+        </div>
 
-    <div class="form-step" id="step4">
-      <h2>Your message</h2>
-      <textarea id="message" placeholder="Tell me about your project..."></textarea>
-      <button class="back-btn" data-back="step3">← Back</button>
-      <button class="send-btn" id="sendEmailBtn">Send Message →</button>
-    </div>
+        <div class="form-field">
+          <label for="message">Pesan Anda</label>
+          <textarea id="message" placeholder="Ceritakan gambaran singkat proyek atau kebutuhan Anda..." required></textarea>
+        </div>
 
-    <div class="form-step" id="successStep">
-      <h2>Message Sent 🚀</h2>
-      <p>Thank you! I’ll get back to you soon.</p>
+        <button type="submit" class="submit-btn" id="sendEmailBtn">
+          <span>Kirim Pesan</span>
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+
+      <!-- Status Berhasil -->
+      <div class="form-success-state" id="formSuccessState" style="display: none;">
+        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+        <h3>Pesan Terkirim! 🚀</h3>
+        <p>Terima kasih sudah menghubungi. Saya akan segera membalas email Anda.</p>
+      </div>
     </div>
   </div>
 

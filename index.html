@@ -8,12 +8,12 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Font -->
+  <!-- Font Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
+  <!-- FontAwesome Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -26,321 +26,480 @@
   <div class="blur blur-1"></div>
   <div class="blur blur-2"></div>
 
-  <!-- RIGHT TOP MENU -->
+  <!-- FLOATING SPACE VERTICAL NAVBAR (SISI KIRI) -->
+  <nav class="space-nav" id="spaceNav">
+    <div class="space-nav-track">
+      <div class="track-line"></div>
+      
+      <a href="#start" class="nav-node active" data-target="start">
+        <div class="node-bullet">
+          <span class="ring"></span>
+          <span class="dot"></span>
+        </div>
+        <div class="node-info">
+          <span class="node-title">START</span>
+          <span class="node-sub">0.00 AU</span>
+        </div>
+      </a>
+
+      <a href="#about" class="nav-node" data-target="about">
+        <div class="node-bullet">
+          <span class="ring"></span>
+          <span class="dot"></span>
+        </div>
+        <div class="node-info">
+          <span class="node-title">ABOUT</span>
+          <span class="node-sub">1.00 AU</span>
+        </div>
+      </a>
+
+      <a href="#skill" class="nav-node" data-target="skill">
+        <div class="node-bullet">
+          <span class="ring"></span>
+          <span class="dot"></span>
+        </div>
+        <div class="node-info">
+          <span class="node-title">SKILL</span>
+          <span class="node-sub">1.52 AU</span>
+        </div>
+      </a>
+
+      <a href="#experience" class="nav-node" data-target="experience">
+        <div class="node-bullet">
+          <span class="ring"></span>
+          <span class="dot"></span>
+        </div>
+        <div class="node-info">
+          <span class="node-title">EXP</span>
+          <span class="node-sub">5.20 AU</span>
+        </div>
+      </a>
+
+      <a href="#lab" class="nav-node" data-target="lab">
+        <div class="node-bullet">
+          <span class="ring"></span>
+          <span class="dot"></span>
+        </div>
+        <div class="node-info">
+          <span class="node-title">LAB</span>
+          <span class="node-sub">9.58 AU</span>
+        </div>
+      </a>
+
+      <a href="#contact" class="nav-node" data-target="contact">
+        <div class="node-bullet">
+          <span class="ring"></span>
+          <span class="dot"></span>
+        </div>
+        <div class="node-info">
+          <span class="node-title">CONTACT</span>
+          <span class="node-sub">19.20 AU</span>
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <!-- FIXED SOCIAL (SISI KANAN) -->
+  <div class="right-social">
+    <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <div class="line"></div>
+  </div>
+
+  <!-- MOBILE HAMBURGER MENU -->
   <button class="menu-btn" id="menuBtn">
     <i class="fas fa-bars"></i>
   </button>
 
-  <!-- SIDEBAR -->
+  <!-- SIDEBAR (DRAWER MOBILE) -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-top">
       <div class="logo-circle">FH</div>
-
       <button class="close-btn" id="closeBtn">
         <i class="fas fa-times"></i>
       </button>
     </div>
 
     <nav class="sidebar-menu">
-      <a href="#start"><span>01.</span> Start</a>
-      <a href="#about"><span>02.</span> About</a>
-      <a href="#skill"><span>03.</span> Skill</a>
-      <a href="#experience"><span>04.</span> Experience</a>
-      <a href="#lab"><span>05.</span> Lab</a>
-      <a href="#contact"><span>06.</span> Contact</a>
+      <a href="#start" data-target="start"><span>01.</span> Start</a>
+      <a href="#about" data-target="about"><span>02.</span> About</a>
+      <a href="#skill" data-target="skill"><span>03.</span> Skill</a>
+      <a href="#experience" data-target="experience"><span>04.</span> Experience</a>
+      <a href="#lab" data-target="lab"><span>05.</span> Lab</a>
+      <a href="#contact" data-target="contact"><span>06.</span> Contact</a>
     </nav>
-
-    <div class="sidebar-bottom">
-      <a href="#"><i class="fab fa-github"></i> GitHub</a>
-      <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-    </div>
   </aside>
 
-  <!-- OVERLAY -->
+  <!-- OVERLAY BACKGROUND -->
   <div class="overlay" id="overlay"></div>
 
-  <!-- LEFT FIXED SOCIAL -->
-  <div class="left-social">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <div class="line"></div>
-  </div>
+  <!-- WADAH HALAMAN (BEBAS DARI SCROLL SNAP NGEBUG) -->
+  <main class="main-wrapper">
 
-  <!-- MAIN -->
-  <main>
+    <!-- 01. START / HERO -->
+    <section id="start" class="section-panel hero">
+      <div class="section-inner hero-container">
+        
+        <div class="hero-content">
+          <p class="intro">Hi, my name is</p>
+          <h1 class="hero-name">Fajral Huda Gustaray.</h1>
+          
+          <h2 class="hero-role">
+            And I build <span class="typing-text"></span><span class="cursor">&nbsp;</span>
+          </h2>
 
-    <!-- START -->
-    <section id="start" class="hero">
-      <p class="intro">Hi, my name is</p>
-
-      <h1>Fajral Huda Gustaray.</h1>
-
-      <h2>
-        I build <span>Data</span>, <span>AI</span>, and <span>Digital Systems</span>.
-      </h2>
-
-      <p class="hero-desc">
-        Saya adalah mahasiswa Teknik Informatika yang fokus membangun kemampuan di
-        bidang Data Science, Artificial Intelligence, FastAPI, OCR, Web Development,
-        dan Web3 untuk menciptakan sistem nyata yang bermanfaat.
-      </p>
-
-      <a href="#lab" class="hero-btn">See My Projects</a>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <h3 class="section-title"><span>02.</span> About Me</h3>
-
-      <div class="about-grid">
-
-        <div class="about-text">
-          <p>
-            Saya sedang membangun perjalanan sebagai developer dengan fokus pada
-            pengembangan sistem audit otomatis, machine learning, data analysis,
-            dan teknologi blockchain.
+          <p class="hero-desc">
+            Saya adalah mahasiswa Teknik Informatika yang fokus membangun kemampuan di
+            bidang Data Science, Artificial Intelligence, FastAPI, OCR, Web Development,
+            dan Web3 untuk menciptakan sistem nyata yang bermanfaat.
           </p>
 
-          <p>
-            Saat ini saya mengembangkan project seperti Sistem Audit POS berbasis
-            FastAPI + OCR serta AI Crypto Detector untuk analisis transaksi on-chain.
-          </p>
+          <div class="hero-socials">
+            <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#lab" class="hero-btn-pill">See My Projects</a>
+          </div>
         </div>
 
-        <div class="code-card">
-<pre>
-class FajralDev {
-  role = [
-    "Data Science Learner",
-    "AI Builder",
-    "Web Developer",
-    "FastAPI Developer"
+        <div class="hero-image-wrapper">
+          <div class="hexagon-glow"></div>
+          <div class="hexagon-box">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="Fajral Huda Gustaray" class="profile-img" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 02. ABOUT -->
+    <section id="about" class="section-panel">
+      <div class="section-inner">
+        <h3 class="section-title"><span>02.</span> About Me</h3>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              Saya sedang membangun perjalanan sebagai developer dengan fokus pada
+              pengembangan sistem audit otomatis, machine learning, data analysis,
+              dan teknologi blockchain.
+            </p>
+            <p>
+              Saat ini saya mengembangkan project seperti Sistem Audit POS berbasis
+              FastAPI + OCR serta AI Crypto Detector untuk analisis transaksi on-chain.
+            </p>
+          </div>
+
+          <!-- KARTU KODE VS CODE MINIMALIS -->
+          <div class="code-card">
+            <div class="code-header">
+              <div class="code-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="code-icons">
+                <i class="fas fa-code" title="VS Code Editor"></i>
+              </div>
+            </div>
+
+            <pre class="code-body"><code><span class="kwd">class</span> <span class="cls">FajralDev</span> {
+  <span class="prop">role</span> = [
+    <span class="str">"Data Science Learner"</span>,
+    <span class="str">"AI Builder"</span>,
+    <span class="str">"Web Developer"</span>,
+    <span class="str">"FastAPI Developer"</span>
   ];
 
-  currentFocus() {
-    return [
-      "POS Audit System",
-      "AI Crypto Detector",
-      "Portfolio Building"
+  <span class="fn">currentFocus</span>() {
+    <span class="kwd">return</span> [
+      <span class="str">"POS Audit System"</span>,
+      <span class="str">"AI Crypto Detector"</span>,
+      <span class="str">"Portfolio Building"</span>
     ];
   }
-}
-</pre>
-        </div>
+}<span class="cursor-blink">|</span></code></pre>
+          </div>
 
+        </div>
       </div>
     </section>
 
-    <!-- SKILL -->
-    <section id="skill" class="section">
-      <h3 class="section-title"><span>03.</span> Skill</h3>
+    <!-- 03. SKILL -->
+    <section id="skill" class="section-panel">
+      <div class="section-inner">
+        <h3 class="section-title"><span>03.</span> Skill</h3>
+        <div class="skills-container">
+          <div class="skill-box">
+            <h4>Frontend</h4>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
 
-      <div class="skills-container">
+          <div class="skill-box">
+            <h4>Backend</h4>
+            <ul>
+              <li>Python</li>
+              <li>FastAPI</li>
+              <li>SQLAlchemy</li>
+              <li>REST API</li>
+            </ul>
+          </div>
 
-        <div class="skill-box">
-          <h4>Frontend</h4>
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-          </ul>
+          <div class="skill-box">
+            <h4>Data & AI</h4>
+            <ul>
+              <li>Pandas</li>
+              <li>Machine Learning</li>
+              <li>Data Cleaning</li>
+              <li>OCR</li>
+            </ul>
+          </div>
+
+          <div class="skill-box">
+            <h4>Other</h4>
+            <ul>
+              <li>GitHub</li>
+              <li>Web3</li>
+              <li>Solidity Basic</li>
+            </ul>
+          </div>
         </div>
-
-        <div class="skill-box">
-          <h4>Backend</h4>
-          <ul>
-            <li>Python</li>
-            <li>FastAPI</li>
-            <li>SQLAlchemy</li>
-            <li>REST API</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h4>Data & AI</h4>
-          <ul>
-            <li>Pandas</li>
-            <li>Machine Learning</li>
-            <li>Data Cleaning</li>
-            <li>OCR</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h4>Other</h4>
-          <ul>
-            <li>GitHub</li>
-            <li>Web3</li>
-            <li>Solidity Basic</li>
-          </ul>
-        </div>
-
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-      <h3 class="section-title"><span>04.</span> Experience</h3>
+    <!-- 04. EXPERIENCE (TIMELINE) -->
+    <section id="experience" class="section-panel">
+      <div class="section-inner">
+        <h3 class="section-title"><span>04.</span> Experience</h3>
+        
+        <div class="timeline-container" id="timelineScroll">
+          <div class="timeline-line"></div>
 
-      <div class="experience-list">
+          <!-- ITEM 1 -->
+          <div class="timeline-item">
+            <div class="timeline-node"><span class="timeline-dot"></span></div>
+            <div class="timeline-content">
+              <div class="timeline-top">
+                <div class="job-meta">
+                  <h4 class="job-title">Data Science & AI Initiative</h4>
+                  <div class="job-sub">
+                    <span class="job-role">Data Science Learner & Builder</span>
+                    <span class="separator">•</span>
+                    <span class="company-name">Independent / Academic Project</span>
+                  </div>
+                </div>
+                <span class="timeline-badge">2026 - Present</span>
+              </div>
+              <p class="job-desc">
+                Fokus pada riset serta implementasi data preprocessing, machine learning model,
+                clustering, dan pembangunan AI system untuk otomatisasi pemrosesan data nyata.
+              </p>
+            </div>
+          </div>
 
-        <div class="experience-item">
-          <h4>Data Science Learning Journey</h4>
-          <span>2026 - Present</span>
-          <p>
-            Fokus pada data preprocessing, machine learning, clustering,
-            dan pembangunan AI system.
-          </p>
+          <!-- ITEM 2 -->
+          <div class="timeline-item">
+            <div class="timeline-node"><span class="timeline-dot"></span></div>
+            <div class="timeline-content">
+              <div class="timeline-top">
+                <div class="job-meta">
+                  <h4 class="job-title">POS Audit Automation System</h4>
+                  <div class="job-sub">
+                    <span class="job-role">Backend & OCR Developer</span>
+                    <span class="separator">•</span>
+                    <span class="company-name">Internal System Project</span>
+                  </div>
+                </div>
+                <span class="timeline-badge">2026</span>
+              </div>
+              <p class="job-desc">
+                Mengembangkan arsitektur backend validasi laporan penjualan POS terhadap mutasi
+                rekening bank secara otomatis menggunakan integrasi pipeline FastAPI dan OCR.
+              </p>
+            </div>
+          </div>
+
+          <!-- ITEM 3 -->
+          <div class="timeline-item">
+            <div class="timeline-node"><span class="timeline-dot"></span></div>
+            <div class="timeline-content">
+              <div class="timeline-top">
+                <div class="job-meta">
+                  <h4 class="job-title">Web3 & On-Chain Security Research</h4>
+                  <div class="job-sub">
+                    <span class="job-role">Blockchain Researcher</span>
+                    <span class="separator">•</span>
+                    <span class="company-name">Self-Directed Study</span>
+                  </div>
+                </div>
+                <span class="timeline-badge">2026</span>
+              </div>
+              <p class="job-desc">
+                Mempelajari pemrograman Solidity smart contract serta analisis aliran transaksi on-chain
+                sebagai fondasi pengembangan model AI pendeteksi transaksi kripto berbahaya.
+              </p>
+            </div>
+          </div>
+
+          <!-- ITEM 4 -->
+          <div class="timeline-item">
+            <div class="timeline-node"><span class="timeline-dot"></span></div>
+            <div class="timeline-content">
+              <div class="timeline-top">
+                <div class="job-meta">
+                  <h4 class="job-title">Fullstack Web & API Engineering</h4>
+                  <div class="job-sub">
+                    <span class="job-role">Web Developer</span>
+                    <span class="separator">•</span>
+                    <span class="company-name">Freelance / Project Collaboration</span>
+                  </div>
+                </div>
+                <span class="timeline-badge">2025 - 2026</span>
+              </div>
+              <p class="job-desc">
+                Membangun antarmuka web responsif performa tinggi terintegrasi dengan REST API backend
+                untuk kebutuhan manajemen konten dan sistem transaksi digital klien.
+              </p>
+            </div>
+          </div>
+
+          <!-- ITEM 5 -->
+          <div class="timeline-item">
+            <div class="timeline-node"><span class="timeline-dot"></span></div>
+            <div class="timeline-content">
+              <div class="timeline-top">
+                <div class="job-meta">
+                  <h4 class="job-title">Informatics Lab Assistant</h4>
+                  <div class="job-sub">
+                    <span class="job-role">Laboratory Assistant</span>
+                    <span class="separator">•</span>
+                    <span class="company-name">University Informatics Department</span>
+                  </div>
+                </div>
+                <span class="timeline-badge">2025</span>
+              </div>
+              <p class="job-desc">
+                Membantu mahasiswa dalam pemahaman dasar pemrograman algoritma, struktur data Python,
+                serta konfigurasi basis data relasional.
+              </p>
+            </div>
+          </div>
+
         </div>
-
-        <div class="experience-item">
-          <h4>POS Audit Automation Project</h4>
-          <span>2026</span>
-          <p>
-            Mengembangkan sistem validasi laporan POS terhadap mutasi bank
-            menggunakan FastAPI dan OCR.
-          </p>
-        </div>
-
-        <div class="experience-item">
-          <h4>Web3 & Blockchain Learning</h4>
-          <span>2026</span>
-          <p>
-            Mempelajari Solidity, smart contract, dan on-chain transaction analysis.
-          </p>
-        </div>
-
       </div>
     </section>
 
-    <!-- LAB -->
-    <section id="lab" class="section">
-      <h3 class="section-title"><span>05.</span> Lab / Projects</h3>
+    <!-- 05. LAB -->
+    <section id="lab" class="section-panel">
+      <div class="section-inner">
+        <h3 class="section-title"><span>05.</span> Lab / Projects</h3>
+        <div class="project-grid">
+          <div class="project-card">
+            <p class="project-label">Featured Project</p>
+            <h4>Sistem Audit POS Otomatis</h4>
+            <p>
+              Validasi laporan penjualan POS terhadap bukti mutasi bank
+              berbasis FastAPI dan OCR.
+            </p>
+            <div class="tech">FastAPI • OCR • Python</div>
+          </div>
 
-      <div class="project-grid">
+          <div class="project-card">
+            <p class="project-label">Featured Project</p>
+            <h4>AI Crypto Detector</h4>
+            <p>
+              Model AI untuk mendeteksi transaksi crypto berbahaya
+              secara on-chain.
+            </p>
+            <div class="tech">AI • Data Science • Web3</div>
+          </div>
 
-        <div class="project-card">
-          <p class="project-label">Featured Project</p>
-          <h4>Sistem Audit POS Otomatis</h4>
-          <p>
-            Validasi laporan penjualan POS terhadap bukti mutasi bank
-            berbasis FastAPI dan OCR.
-          </p>
-          <div class="tech">FastAPI • OCR • Python</div>
+          <div class="project-card">
+            <p class="project-label">Featured Project</p>
+            <h4>Portfolio Website</h4>
+            <p>
+              Website profile futuristik untuk personal branding
+              dan showcase project.
+            </p>
+            <div class="tech">HTML • CSS • JS</div>
+          </div>
         </div>
-
-        <div class="project-card">
-          <p class="project-label">Featured Project</p>
-          <h4>AI Crypto Detector</h4>
-          <p>
-            Model AI untuk mendeteksi transaksi crypto berbahaya
-            secara on-chain.
-          </p>
-          <div class="tech">AI • Data Science • Web3</div>
-        </div>
-
-        <div class="project-card">
-          <p class="project-label">Featured Project</p>
-          <h4>Portfolio Website</h4>
-          <p>
-            Website profile futuristik untuk personal branding
-            dan showcase project.
-          </p>
-          <div class="tech">HTML • CSS • JS</div>
-        </div>
-
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section contact">
-      <h3 class="section-title"><span>06.</span> Contact</h3>
-
-      <h2>Let’s Build Something Great.</h2>
-
-      <p>
-        Terbuka untuk kolaborasi, project, maupun koneksi profesional
-        di bidang Data, AI, dan Development.
-      </p>
-
-      <button class="hero-btn" id="openContactForm">
-        Say Hello
-      </button>
+    <!-- 06. CONTACT -->
+    <section id="contact" class="section-panel contact">
+      <div class="section-inner">
+        <h3 class="section-title"><span>06.</span> Contact</h3>
+        <h2>Let’s Build Something Great.</h2>
+        <p>
+          Terbuka untuk kolaborasi, project, maupun koneksi profesional
+          di bidang Data, AI, dan Development.
+        </p>
+        <button class="hero-btn-pill" id="openContactForm" style="cursor: pointer; border: none; margin-top: 24px;">
+          Say Hello
+        </button>
+      </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Designed & Built by Fajral Huda Gustaray</p>
-  </footer>
-
   <!-- EMAILJS -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <!-- JS -->
-<script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
 
+  <!-- CONTACT FORM MODAL -->
+  <div class="contact-modal" id="contactModal">
+    <button class="modal-close" id="closeContactForm">×</button>
 
-<!-- CONTACT FORM MODAL -->
-<div class="contact-modal" id="contactModal">
+    <div class="form-step active" id="step1">
+      <h2>Let’s connect.</h2>
+      <p>What’s your name?</p>
+      <input type="text" id="from_name" placeholder="Your Name" />
+      <button class="next-btn" data-next="step2">Next →</button>
+    </div>
 
-  <button class="modal-close" id="closeContactForm">×</button>
+    <div class="form-step" id="step2">
+      <h2>Your email?</h2>
+      <input type="email" id="from_email" placeholder="your@email.com" />
+      <button class="back-btn" data-back="step1">← Back</button>
+      <button class="next-btn" data-next="step3">Next →</button>
+    </div>
 
-  <!-- STEP 1 -->
-  <div class="form-step active" id="step1">
-    <h2>Let’s connect.</h2>
-    <p>What’s your name?</p>
+    <div class="form-step" id="step3">
+      <h2>What are you interested in?</h2>
+      <select id="interest">
+        <option value="">Choose One</option>
+        <option value="Website Development">Website Development</option>
+        <option value="Data Science">Data Science</option>
+        <option value="AI Project">AI Project</option>
+        <option value="Web3">Web3</option>
+        <option value="Collaboration">Collaboration</option>
+      </select>
+      <button class="back-btn" data-back="step2">← Back</button>
+      <button class="next-btn" data-next="step4">Next →</button>
+    </div>
 
-    <input type="text" id="from_name" placeholder="Your Name" />
+    <div class="form-step" id="step4">
+      <h2>Your message</h2>
+      <textarea id="message" placeholder="Tell me about your project..."></textarea>
+      <button class="back-btn" data-back="step3">← Back</button>
+      <button class="send-btn" id="sendEmailBtn">Send Message →</button>
+    </div>
 
-    <button class="next-btn" data-next="step2">Next →</button>
+    <div class="form-step" id="successStep">
+      <h2>Message Sent 🚀</h2>
+      <p>Thank you! I’ll get back to you soon.</p>
+    </div>
   </div>
 
-  <!-- STEP 2 -->
-  <div class="form-step" id="step2">
-    <h2>Your email?</h2>
-
-    <input type="email" id="from_email" placeholder="your@email.com" />
-
-    <button class="back-btn" data-back="step1">← Back</button>
-    <button class="next-btn" data-next="step3">Next →</button>
-  </div>
-
-  <!-- STEP 3 -->
-  <div class="form-step" id="step3">
-    <h2>What are you interested in?</h2>
-
-    <select id="interest">
-      <option value="">Choose One</option>
-      <option value="Website Development">Website Development</option>
-      <option value="Data Science">Data Science</option>
-      <option value="AI Project">AI Project</option>
-      <option value="Web3">Web3</option>
-      <option value="Collaboration">Collaboration</option>
-    </select>
-
-    <button class="back-btn" data-back="step2">← Back</button>
-    <button class="next-btn" data-next="step4">Next →</button>
-  </div>
-
-  <!-- STEP 4 -->
-  <div class="form-step" id="step4">
-    <h2>Your message</h2>
-
-    <textarea id="message" placeholder="Tell me about your project..."></textarea>
-
-    <button class="back-btn" data-back="step3">← Back</button>
-    <button class="send-btn" id="sendEmailBtn">Send Message →</button>
-  </div>
-
-  <!-- SUCCESS -->
-  <div class="form-step" id="successStep">
-    <h2>Message Sent 🚀</h2>
-    <p>Thank you! I’ll get back to you soon.</p>
-  </div>
-
-</div>
 </body>
 </html>
